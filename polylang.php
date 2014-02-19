@@ -119,6 +119,9 @@ class Polylang {
 		// extra code for compatibility with some plugins
 		if (!defined('PLL_PLUGINS_COMPAT') || PLL_PLUGINS_COMPAT)
 			new PLL_Plugins_Compat();
+
+		if (defined('WP_CLI') && WP_CLI)
+			require_once(PLL_INC.'/cli.php');
 	}
 
 	/*
